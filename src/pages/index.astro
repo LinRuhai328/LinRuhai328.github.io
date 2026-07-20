@@ -32,13 +32,13 @@ const homePath = getRelativeLocaleUrl(locale, "");
         思考，学习，<br />与沿途所得。
       </h1>
       <p class="text-muted-foreground mt-6 max-w-xl text-[0.95rem] leading-8">
-        记录个人思考、学习过程、技术实践与阶段成果。使用网名写作，缓慢更新，长期保留。
+        写点学到的东西，也记下走过的弯路。
       </p>
       <LinkButton
         class="text-accent mt-5 inline-flex items-center gap-1 text-sm"
         href={getRelativeLocaleUrl(locale, "about")}
       >
-        了解 River 与联系方式 <IconArrowRight class="size-4" />
+        关于我 <IconArrowRight class="size-4" />
       </LinkButton>
     </section>
 
@@ -70,7 +70,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
           </ul>
         ) : (
           <p class="text-muted-foreground py-8 text-sm leading-7">
-            文章正在形成。这里不会用占位内容填满页面。
+            还没有文章。
           </p>
         )
       }
