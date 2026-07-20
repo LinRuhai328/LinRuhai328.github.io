@@ -60,8 +60,6 @@ pdf: "/downloads/example.pdf"
 3. 运行格式、Lint 和生产构建。
 4. 提交并推送 `main`，GitHub Actions 自动发布到 GitHub Pages。
 
-网站是完整原文的唯一内容源；小红书内容由作者手动改编，不自动同步。
-
 ## 可选集成
 
 - Giscus：设置 `PUBLIC_GISCUS_REPO_ID` 与 `PUBLIC_GISCUS_CATEGORY_ID` 后启用文章评论。
