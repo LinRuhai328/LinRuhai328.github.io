@@ -1,15 +1,14 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import Socials from "./Socials.astro";
-import { useTranslations } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import config from "@/config";
 
 type Props = {
   noMarginTop?: boolean;
 } & HTMLAttributes<"footer">;
 
 const { noMarginTop = false, class: className, ...attrs } = Astro.props;
-
-const t = useTranslations(Astro.currentLocale);
+const locale = Astro.currentLocale ?? config.site.lang;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -18,13 +17,21 @@ const currentYear = new Date().getFullYear();
   {...attrs}
 >
   <div
-    class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"
+    class="border-border text-muted-foreground flex flex-col gap-4 border-t py-6 text-sm sm:flex-row sm:items-center sm:justify-between"
   >
-    <Socials />
-    <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row">
-      <span>{t.footer.copyright} &#169; {currentYear}</span>
-      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
-      <span>{t.footer.allRightsReserved}</span>
-    </div>
+    <nav aria-label="联系与订阅" class="flex flex-wrap gap-x-5 gap-y-2">
+      <a class="hover:text-accent" href="mailto:ruhai3937@gmail.com">邮箱</a>
+      <a
+        class="hover:text-accent"
+        href="https://github.com/LinRuhai328"
+        target="_blank"
+        rel="noopener noreferrer">GitHub</a
+      >
+      <a
+        class="hover:text-accent"
+        href={getRelativeLocaleUrl(locale, "rss.xml")}>RSS</a
+      >
+    </nav>
+    <span>© {currentYear} River</span>
   </div>
 </footer>

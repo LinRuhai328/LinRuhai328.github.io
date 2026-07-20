@@ -7,28 +7,33 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-app: var(--font-google-sans-code);
+  --font-app: var(--font-sans);
+  --font-editorial: var(--font-serif);
 }
 
 /* Light theme values */
 :root,
 [data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
+  --background: #f8f6f1;
+  --foreground: #20201d;
+  --accent: #8a3328;
   --accent-foreground: #ffffff;
-  --muted: #e6e6e6;
-  --muted-foreground: #6b7280;
-  --border: #ece9e9;
+  --muted: #ebe6dd;
+  --muted-foreground: #706b62;
+  --border: #d2ccc1;
+  --font-sans:
+    "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  --font-serif:
+    "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, serif;
 }
 
 /* Dark theme values */
 [data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --accent-foreground: #ffffff;
-  --muted: #343f60;
-  --muted-foreground: #afb9ca;
-  --border: #ab4b08;
+  --background: #1e1d1a;
+  --foreground: #ebe5da;
+  --accent: #c87567;
+  --accent-foreground: #1e1d1a;
+  --muted: #312e29;
+  --muted-foreground: #aaa398;
+  --border: #454039;
 }

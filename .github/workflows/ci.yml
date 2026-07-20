@@ -5,42 +5,37 @@ permissions:
 
 on:
   pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-      - reopened
   workflow_call:
 
 jobs:
   build:
-    name: Code standards & build
+    name: Code standards and build
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 5
 
     steps:
-      - name: "☁️ Checkout repository"
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v7
 
-      - name: "📦 Install pnpm"
+      - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: "11.3.0"
+          version: "11.15.1"
 
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-          cache: "pnpm"
+          cache: pnpm
 
-      - name: "📦 Install dependencies"
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: "🔎 Lint code"
+      - name: Lint code
         run: pnpm run lint
 
-      - name: "📝 Checking code format"
+      - name: Check code format
         run: pnpm run format:check
 
-      - name: "🚀 Build the project"
+      - name: Build project
         run: pnpm run build
